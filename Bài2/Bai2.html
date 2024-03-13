@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title> Form đóng góp ý kiến </title>
+    <link rel="stylesheet" href="Bai2.css">
+</head>
+
+<body>
+
+<form action="" onsubmit="return show();">
+    <h1>ĐÓNG GÓP Ý KIẾN VỀ SẢN PHẨM</h1>
+    <p>Góp ý của bạn sẽ được chúng tôi xem xét, vui lòng nhập tiếng việt có dấu.</p>
+    <p>Các ý kiến đóng góp nên viết chi tiết rõ ràng, kèm theo các minh chứng xác thực thời gian và địa điểm <i>(nếu có)</i>.</p>
+</br>
+
+    <div class="form-group">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" placeholder="Fullname" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="phone">Điện thoại:</label>
+        <input type="text" id="phone" placeholder="Phone" required>
+    </div>
+   
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="customer_type">Chọn loại khách hàng:</label>
+        <select id="customer_type" placeholder="Customer_type">
+            <option value="">-- Chọn --</option>
+            <option value="1">Khách hàng cá nhân</option>
+            <option value="2">Doanh nghiệp</option>
+        </select>
+    
+    </div>
+    
+    <div class="form-group">
+        <label for="product_code">Mã sản phẩm:</label>
+        <input type="text" id="product_code" placeholder="Product_code" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="content">Nội dung góp ý:</label>
+        <textarea id="content" rows="5" required></textarea>
+    </div>
+    
+    <input type="submit" value="GỬI GÓP Ý">
+
+    <script >
+        function show() {
+                //input
+                var ten = document.getElementById("fullname").value;
+                var dt = document.getElementById("phone").value;
+                var email = document.getElementById("email").value;
+                var loai = document.getElementById("customer_type").value;
+                var sp = document.getElementById("product_code").value;
+                var nd = document.getElementById("content").value;
+                //output
+                var output = "Thông tin của bạn:\n\n" +
+                    "Họ và tên: " + ten + "\n" +
+                    "Email: " + email + "\n" +
+                    "Số điện thoại: " + dt + "\n" +
+                    "Loại khách hàng: "+loai+"\n"+
+                    "Mã sản phẩm: "+sp+"\n"+
+                    "Nội dung góp ý: " + nd;
+                if (confirm(output)) {
+                // If user confirms, submit the form
+                return true;
+                } else {
+                // If user cancels, prevent form submission
+                return false;
+                }
+
+
+            }
+    </script>
+
+  </form>
+
+</body>
+</html>
